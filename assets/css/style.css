@@ -1,0 +1,125 @@
+/* 1. CONFIGURACIÓN GENERAL (Guía de Estilo) */
+:root {
+    --color-fondo: #0b0d17;
+    --color-texto: #ffffff;
+    --color-acento: #d2d8f9;
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el diseño no desencaixe  */
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+}
+
+/* 2. NAVEGACIÓN (Usabilidad) [cite: 45] */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-acento);
+}
+
+/* 3. CONTENIDO PRINCIPAL (Semántica) [cite: 24] */
+main {
+    padding-top: 100px; /* Para no quedar debajo del header fijo */
+}
+
+#hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #1b1f38 0%, #0b0d17 100%);
+}
+
+.planeta-card {
+    padding: 4rem 10%;
+    border-bottom: 1px solid #222;
+}
+
+.planeta-card article {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Retícula para el diseño [cite: 8] */
+    gap: 2rem;
+    align-items: center;
+}
+
+.planeta-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
+}
+
+/* 4. RESPONSIVE DESIGN (Criterio 5)  */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .planeta-card article {
+        grid-template-columns: 1fr; /* En móvil, una sola columna  */
+        text-align: center;
+    }
+
+    .planeta-card img {
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* 5. PIE DE PÁGINA (General/Legal) [cite: 69] */
+footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+footer a {
+    color: var(--color-acento);
+}
