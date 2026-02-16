@@ -44,15 +44,15 @@ Asegúrate de que los parámetros de conexión coincidan con tu entorno local:
 
 ```PHP
 
-$host \= 'localhost';
+$host = 'localhost';
 
-$user \= 'root';
+$user = 'root';
 
-$pass \= ''; // O tu contraseña de MySQL
+$pass = ''; // O tu contraseña de MySQL
 
-$db   \= 'cosmosweb';
+$db   = 'cosmosweb';
 
-$port \= '3306'; // Cambiar a 3307 si usas el puerto de MariaDB en Windows
+$port = '3306'; // Cambiar a 3307 si usas el puerto de MariaDB en Windows
 ```
 
 ### **4\. Permisos en Linux (Ubuntu)**
@@ -81,3 +81,8 @@ sudo chmod \-R 755 /opt/lampp/htdocs/CosmosWEB-SASDIW
 
 **Módulo:** Diseño de interfaces Web (DIW)
 
+---
+
+## Acceso a la aplicación
+
+[CosmosWeb](./index.php)
