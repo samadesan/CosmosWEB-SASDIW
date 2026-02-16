@@ -42,7 +42,7 @@ Descarga el repositorio y colócalo en la carpeta raíz de tu servidor:
 
 Asegúrate de que los parámetros de conexión coincidan con tu entorno local:
 
-PHP
+```PHP
 
 $host \= 'localhost';
 
@@ -53,6 +53,7 @@ $pass \= ''; // O tu contraseña de MySQL
 $db   \= 'cosmosweb';
 
 $port \= '3306'; // Cambiar a 3307 si usas el puerto de MariaDB en Windows
+```
 
 ### **4\. Permisos en Linux (Ubuntu)**
 
@@ -72,16 +73,11 @@ sudo chmod \-R 755 /opt/lampp/htdocs/CosmosWEB-SASDIW
 * `sql/sistema-solar.sql`: Base de datos de la aplicación.  
 * `login.php / registro.php`: Interfaz de gestión de usuarios.
 
-## **👤 Credenciales de Acceso (Test)**
-
-* **Usuario:** `admin`  
-* **Contraseña:** `admin`
-
 ---
 
 **Desarrollado por:** Samuel Aded Santafé
 
 **Fecha:** 16 de febrero de 2026
 
-**Módulo:** FrontEnd / Programación Servidor
+**Módulo:** Diseño de interfaces Web (DIW)
 
