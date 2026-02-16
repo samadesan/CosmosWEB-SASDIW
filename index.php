@@ -58,9 +58,9 @@ require_once './includes/planetas.php';
                     <li class="nav-item ms-lg-4">
                         <?php if (isset($_SESSION['usuario'])): ?>
                             <div class="d-flex align-items-center">
-            <span class="nav-link me-3" style="color: var(--color-acento); font-weight: bold;">
-                Hola, <?php echo htmlspecialchars($_SESSION['usuario']); ?>
-            </span>
+                                <span class="nav-link me-3" style="color: var(--color-acento); font-weight: bold;">
+                                    Hola, <?php echo htmlspecialchars($_SESSION['usuario']); ?>
+                                </span>
                                 <a href="api/logout.php" class="btn btn-outline-danger btn-sm">
                                     Cerrar Sesión
                                 </a>
@@ -80,7 +80,7 @@ require_once './includes/planetas.php';
     <section id="hero" class="hero-space">
         <div class="hero-content text-center">
             <div class="container">
-                <h2 class="display-3 fw-bold">Descubre los Secretos del Espacio</h2>
+                <h1 class="display-3 fw-bold">Descubre los Secretos del Espacio</h1>
                 <p class="lead">Un viaje interactivo por nuestro vecindario galáctico incluyendo planetas enanos.</p>
             </div>
         </div>
@@ -91,9 +91,7 @@ require_once './includes/planetas.php';
                 <?php foreach ($planetas as $id => $datos): ?>
                     <div class="carousel-item <?php echo $active ? 'active' : ''; ?>"
                          style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/espacio-fondo.jpg');">
-
-                        <img src="assets/img/<?php echo $id; ?>.png" class="planet-bg-img" alt="<?php echo $datos['nombre']; ?>">
-
+                        <img src="assets/img/<?php echo $id; ?>.png" class="planet-bg-img" alt="Fondo decorativo de <?php echo $datos['nombre']; ?>">
                     </div>
                     <?php $active = false; ?>
                 <?php endforeach; ?>
@@ -103,9 +101,13 @@ require_once './includes/planetas.php';
 
     <?php foreach ($planetas as $id => $datos): ?>
         <section id="<?php echo $id; ?>" class="planeta-card">
+            <h2 class="visually-hidden">Sección de <?php echo $datos['nombre']; ?></h2>
+
             <div class="container-planeta">
                 <article class="planeta-info">
-                    <h2><?php echo $datos['nombre']; ?></h2>
+                    <h3 class="visually-hidden">Información de <?php echo $datos['nombre']; ?></h3>
+
+                    <p class="h2"><?php echo $datos['nombre']; ?></p>
                     <p><strong>Tipo:</strong> <?php echo $datos['tipo']; ?></p>
                     <p><strong>Distancia al Sol:</strong> <?php echo $datos['distancia']; ?></p>
                 </article>
@@ -117,7 +119,8 @@ require_once './includes/planetas.php';
                          data-bs-toggle="modal"
                          data-bs-target="#modalImagenSolo"
                          data-img="assets/img/<?php echo $id; ?>.png"
-                         data-gif="<?php echo $datos['gif']; ?>">
+                         data-gif="<?php echo $datos['gif']; ?>"
+                         alt="Representación de <?php echo $datos['nombre']; ?>">
                 </div>
             </div>
 
@@ -135,35 +138,35 @@ require_once './includes/planetas.php';
             </button>
         </section>
     <?php endforeach; ?>
-    <!-- Modal Foto -->
     <div class="modal fade" id="modalImagenSolo" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content" style="background: transparent; border: none;">
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"
                         style="position: absolute; top: -20px; right: 20px; z-index: 1060; width: 2em; height: 2em;"></button>
 
                 <div class="modal-body text-center">
                     <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-5">
                         <div class="visual-wrapper">
                             <p class="text-acento small mb-2 text-uppercase fw-bold">Vista de Superficie</p>
-                            <img id="imgSoloDisplay" src="" class="img-full-view shadow-planet" alt="Planeta Estático">
+                            <img id="imgSoloDisplay" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="img-full-view shadow-planet" alt="Planeta Estático">
                         </div>
 
                         <div class="visual-wrapper">
                             <p class="text-acento small mb-2 text-uppercase fw-bold">Rotación Axial</p>
-                            <img id="gifSoloDisplay" src="" class="img-full-view rounded-circle shadow-planet" alt="Rotación">
+                            <img id="gifSoloDisplay" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="img-full-view rounded-circle shadow-planet" alt="Rotación animada">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Modal Explorar Detalles -->
+
     <div class="modal fade" id="modalPlaneta" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered"> <div class="modal-content bg-dark text-white shadow-lg" style="border: 2px solid var(--color-acento);">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-dark text-white shadow-lg" style="border: 2px solid var(--color-acento);">
                 <div class="modal-header border-secondary">
-                    <h5 class="modal-title" id="nombrePlaneta" style="color: var(--color-acento); font-weight: bold; text-transform: uppercase; letter-spacing: 2px;"></h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h2 class="modal-title h5" id="nombrePlaneta" style="color: var(--color-acento); font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Detalles del Planeta</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body p-4">
                     <div class="row align-items-center">
@@ -171,26 +174,26 @@ require_once './includes/planetas.php';
                             <div class="row g-2 text-center">
                                 <div class="col-6">
                                     <p class="small text-acento text-uppercase">Vista Estática</p>
-                                    <img id="imgPlanetaModal" src="" class="img-fluid shadow-lg-custom" alt="Vista plana">
+                                    <img id="imgPlanetaModal" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="img-fluid shadow-lg-custom" alt="Vista plana del planeta">
                                 </div>
                                 <div class="col-6">
                                     <p class="small text-acento text-uppercase">Rotación Axial</p>
-                                    <img id="gifPlaneta" src="" class="img-fluid rounded-circle" style="filter: drop-shadow(0 0 10px rgba(0,123,255,0.4));">
+                                    <img id="gifPlaneta" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="img-fluid rounded-circle" style="filter: drop-shadow(0 0 10px rgba(0,123,255,0.4));" alt="Giro del planeta">
                                 </div>
                             </div>
                             <div class="text-center mt-3">
                                 <span id="tipoPlaneta" class="badge rounded-pill bg-primary px-3 py-2"></span>
-                                <p class="text-muted small mt-2"><i class="bi bi-geo-alt"></i> <span id="distanciaPlaneta"></span></p>
+                                <p class="text-muted small mt-2"><span id="distanciaPlaneta"></span></p>
                             </div>
                         </div>
 
                         <div class="col-lg-6" style="border-left: 1px solid rgba(255,255,255,0.1);">
-                            <h6 class="text-uppercase mb-3" style="color: var(--color-acento); font-size: 0.8rem; font-weight: 800;">Análisis de Superficie</h6>
+                            <h3 class="text-uppercase mb-3" style="color: var(--color-acento); font-size: 0.8rem; font-weight: 800;">Análisis de Superficie</h3>
                             <p id="descripcionPlaneta" class="lh-lg" style="text-align: justify; font-size: 0.95rem; color: #e0e0e0;"></p>
 
                             <hr class="border-secondary my-4">
 
-                            <h6 class="text-uppercase mb-3" style="color: var(--color-acento); font-size: 0.8rem; font-weight: 800;">Ficha Técnica</h6>
+                            <h3 class="text-uppercase mb-3" style="color: var(--color-acento); font-size: 0.8rem; font-weight: 800;">Ficha Técnica</h3>
                             <ul id="listaDatos" class="list-unstyled mb-0"></ul>
                         </div>
                     </div>
@@ -200,7 +203,7 @@ require_once './includes/planetas.php';
     </div>
 </main>
 
-<footer>
+<footer class="text-center py-4">
     <p>&copy; 2026 Proyecto CosmosWEB - <a href="aviso-legal.php">Aviso Legal</a> - Samuel Aded Santafé</p>
 </footer>
 
