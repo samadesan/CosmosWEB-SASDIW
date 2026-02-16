@@ -58,9 +58,10 @@ $port \= '3306'; // Cambiar a 3307 si usas el puerto de MariaDB en Windows
 
 Si experimentas un **Error 500**, asegúrate de otorgar permisos de lectura a la carpeta del proyecto:
 
-Bash
+```Bash
 
 sudo chmod \-R 755 /opt/lampp/htdocs/CosmosWEB-SASDIW
+```
 
 ## **📁 Estructura del Proyecto**
 
@@ -68,6 +69,7 @@ sudo chmod \-R 755 /opt/lampp/htdocs/CosmosWEB-SASDIW
 * `/assets`: Recursos estáticos (CSS, JS, imágenes de planetas y GIFs).  
 * `/includes`: Archivos de configuración de DB y datos dinámicos.  
 * `index.php`: Página principal y explorador de planetas.  
+* `sql/sistema-solar.sql`: Base de datos de la aplicación.  
 * `login.php / registro.php`: Interfaz de gestión de usuarios.
 
 ## **👤 Credenciales de Acceso (Test)**
