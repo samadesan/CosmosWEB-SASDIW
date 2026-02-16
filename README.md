@@ -80,9 +80,3 @@ sudo chmod \-R 755 /opt/lampp/htdocs/CosmosWEB-SASDIW
 **Fecha:** 16 de febrero de 2026
 
 **Módulo:** Diseño de interfaces Web (DIW)
-
----
-
-## Acceso a la aplicación
-
-[CosmosWeb](./index.php)
