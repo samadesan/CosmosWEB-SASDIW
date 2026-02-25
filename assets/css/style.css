@@ -351,7 +351,7 @@ footer a {
     transition: transform 0.3s ease;
 }
 
-.img-planeta-clicable, .img-full-view, #gifPlaneta, #imgPlanetaModal {
+.img-planeta-clicable, .img-full-view, #gifPlaneta, #imgPlanetaModal, .img-clicable {
     filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.5));
     /* Esto hace que la sombra siga el borde circular del planeta y no el cuadrado del archivo */
 }
