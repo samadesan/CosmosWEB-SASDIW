@@ -1,10 +1,10 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db   = 'sistema_solar';
-$port = '3306'; // Cambiar al puerto a 3307 si usas Windows
-
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "sistema_solar";
+$port = "3306"; // Cambiar al puerto a 3307 si usas Windows
+    
 $conexion = mysqli_connect($host, $user, $pass, $db);
 
 if (!$conexion) {
