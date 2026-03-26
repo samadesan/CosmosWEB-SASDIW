@@ -9,7 +9,7 @@ require_once './includes/templates/header.php';
         <div class="planeta-card p-5 mb-4">
             <div class="row align-items-center">
                 <div class="col-md-3">
-                    <img src="assets/img/kepler-186f.jpeg" class="img-fluid rounded mt-2 d-block mx-auto img-clicable" alt="Kepler-186f">
+                    <img src="assets/img/exoplanetas/kepler-186f.jpeg" class="img-fluid rounded mt-2 d-block mx-auto img-clicable" alt="Kepler-186f">
                 </div>
                 <div class="col-md-9">
                     <h2>Kepler-186f</h2>

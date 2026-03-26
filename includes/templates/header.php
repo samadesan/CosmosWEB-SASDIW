@@ -8,6 +8,9 @@
     <link rel="icon" type="image/png" href="assets/img/CWEB-icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/seccion-planetas.css">
+    <link rel="stylesheet" href="assets/css/animaciones.css">
+    <link rel="stylesheet" href="assets/css/modales.css">
 </head>
 <body>
 <header>
@@ -28,25 +31,25 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Planetas</a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#mercurio">Mercurio</a></li>
-                            <li><a class="dropdown-item" href="#venus">Venus</a></li>
-                            <li><a class="dropdown-item" href="#tierra">Tierra</a></li>
-                            <li><a class="dropdown-item" href="#marte">Marte</a></li>
-                            <li><a class="dropdown-item" href="#jupiter">Júpiter</a></li>
-                            <li><a class="dropdown-item" href="#saturno">Saturno</a></li>
-                            <li><a class="dropdown-item" href="#urano">Urano</a></li>
-                            <li><a class="dropdown-item" href="#neptuno">Neptuno</a></li>
+                            <li><a class="dropdown-item" href="index.php#mercurio">Mercurio</a></li>
+                            <li><a class="dropdown-item" href="index.php#venus">Venus</a></li>
+                            <li><a class="dropdown-item" href="index.php#tierra">Tierra</a></li>
+                            <li><a class="dropdown-item" href="index.php#marte">Marte</a></li>
+                            <li><a class="dropdown-item" href="index.php#jupiter">Júpiter</a></li>
+                            <li><a class="dropdown-item" href="index.php#saturno">Saturno</a></li>
+                            <li><a class="dropdown-item" href="index.php#urano">Urano</a></li>
+                            <li><a class="dropdown-item" href="index.php#neptuno">Neptuno</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Enanos</a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#ceres">Ceres</a></li>
-                            <li><a class="dropdown-item" href="#pluton">Plutón</a></li>
-                            <li><a class="dropdown-item" href="#haumea">Haumea</a></li>
-                            <li><a class="dropdown-item" href="#makemake">Makemake</a></li>
-                            <li><a class="dropdown-item" href="#eris">Eris</a></li>
+                            <li><a class="dropdown-item" href="index.php#ceres">Ceres</a></li>
+                            <li><a class="dropdown-item" href="index.php#pluton">Plutón</a></li>
+                            <li><a class="dropdown-item" href="index.php#haumea">Haumea</a></li>
+                            <li><a class="dropdown-item" href="index.php#makemake">Makemake</a></li>
+                            <li><a class="dropdown-item" href="index.php#eris">Eris</a></li>
                         </ul>
                     </li>
 
@@ -66,12 +69,10 @@
                     <li class="nav-item ms-lg-4">
                         <?php if (isset($_SESSION['usuario'])): ?>
                         <div class="d-flex align-items-center">
-                                <span class="nav-link me-3" style="color: var(--color-acento); font-weight: bold;">
-                                    Hola, <?php echo htmlspecialchars($_SESSION['usuario']); ?>
-                                </span>
-                            <a href="api/logout.php" class="btn btn-outline-danger btn-sm">
-                                Cerrar Sesión
+                            <a href="perfil.php" class="nav-link me-3" style="color: var(--color-acento); font-weight: bold; text-decoration: none;">
+                                <i class="bi bi-person-circle"></i> Hola, <?php echo htmlspecialchars($_SESSION['usuario']); ?>
                             </a>
+                            <a href="api/logout.php" class="btn btn-outline-danger btn-sm">Cerrar Sesión</a>
                         </div>
                         <?php else: ?>
                         <a class="btn btn-outline-light btn-sm me-2" href="login.php">Iniciar Sesión</a>

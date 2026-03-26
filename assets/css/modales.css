@@ -1,0 +1,90 @@
+/* =========================================
+   ESTILOS BASE DEL MODAL DE DETALLES
+   ========================================= */
+.modal-planeta-detail {
+    background: rgba(10, 15, 25, 0.98) !important;
+    backdrop-filter: blur(25px);
+    border-radius: 40px !important;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    overflow: hidden;
+}
+
+.visual-container img {
+    max-height: 250px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Títulos de sección dentro del modal */
+.section-title-modal {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.section-title-modal::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-left: 15px;
+}
+
+.description-text {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: #ccc;
+    font-weight: 300;
+}
+
+/* Rejilla de Datos Técnicos */
+.tech-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.tech-spec-item {
+    background: rgba(255, 255, 255, 0.03);
+    margin: 6px auto;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tech-spec-label {
+    font-size: 0.65rem;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 700;
+    padding-right: 5px;
+    border-right: 1px solid #232832;
+}
+
+.tech-spec-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #eee;
+    padding-left: 5px;
+}
+
+/* Título del planeta */
+#nombrePlaneta {
+    margin-bottom: 30px;
+}
+
+/* Ajustes de responsive para MacBook */
+@media (max-width: 992px) {
+    .info-column {
+        border-left: none !important;
+        margin-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 30px;
+    }
+}
