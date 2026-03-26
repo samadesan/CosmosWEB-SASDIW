@@ -1,6 +1,7 @@
 /* =========================================
    ESTILOS BASE DEL MODAL DE DETALLES
    ========================================= */
+
 .modal-planeta-detail {
     background: rgba(10, 15, 25, 0.98) !important;
     backdrop-filter: blur(25px);

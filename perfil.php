@@ -11,8 +11,8 @@ $resultado = mysqli_query($conexion, $query);
 $user_data = mysqli_fetch_assoc($resultado);
 ?>
 
-    <main class="container py-6 mt-5">
-        <div class="row g-4 justify-content-center">
+    <main class="container main-content-wrapper">
+        <div class="row g-4 justify-content-center" style="margin-top: 20px">
             <div class="col-lg-4">
                 <div class="planeta-card-v2 text-center p-4 shadow-profile position-relative" style="overflow: hidden;">
                     <div class="perfil-glow-bg"></div>

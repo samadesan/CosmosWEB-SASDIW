@@ -84,13 +84,23 @@
     justify-content: center;
 }
 
-/* Imagen del Planeta en la Sección */
+/* --- PRESENTACIÓN DE LOS PLANETAS --- */
+
+/* Estado natural de la imagen */
 .img-planeta-v2 {
     filter: drop-shadow(0 0 50px rgba(0, 212, 255, 0.4));
     transition: all 0.5s ease;
     max-width: 50%;
     animation: float-card 6s ease-in-out infinite;
     margin-left: 100px;
+    z-index: 2;
+    position: relative;
+}
+
+.img-planeta-v2:hover {
+    animation-play-state: paused;
+    transform: scale(1.1) translateY(-15px) !important;
+    cursor: zoom-in;
 }
 
 /* =========================================
@@ -105,7 +115,6 @@
     height: auto;
     margin: 0 auto;
     display: block;
-    /* El brillo inicial es neutro, se hereda de las clases de abajo */
 }
 
 #modalImagenSolo .modal-content {

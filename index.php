@@ -4,29 +4,28 @@ global $planetas;
 require_once './includes/planetas.php';
 require_once './includes/templates/header.php';
 ?>
+    <section class="hero-space" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/espacio-fondo.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1 class="display-1 fw-bold">Descubre los Secretos del Espacio</h1>
+            <p class="lead">Un viaje interactivo por nuestro vecindario galáctico.</p>
+        </div>
+
+        <div id="carouselPlanetas" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <?php $active = true; ?>
+                <?php foreach ($planetas as $id => $datos):
+                    $esEnano = (strpos(strtolower($datos['tipo']), 'enano') !== false);
+                    $rutaImagenHero = $esEnano ? "assets/img/planetas/enanos/{$id}.png" : "assets/img/planetas/{$id}.png";
+                    ?>
+                    <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
+                        <img src="<?php echo $rutaImagenHero; ?>" class="planet-bg-img" alt="Fondo decorativo de <?php echo $datos['nombre']; ?>">
+                    </div>
+                    <?php $active = false; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
     <main class="main-content-wrapper">
-        <section class="hero-space" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/espacio-fondo.jpg'); background-size: cover; background-position: center;">
-            <div class="hero-content">
-                <h1 class="display-1 fw-bold">Descubre los Secretos del Espacio</h1>
-                <p class="lead">Un viaje interactivo por nuestro vecindario galáctico.</p>
-            </div>
-
-            <div id="carouselPlanetas" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <?php $active = true; ?>
-                    <?php foreach ($planetas as $id => $datos):
-                        $esEnano = (strpos(strtolower($datos['tipo']), 'enano') !== false);
-                        $rutaImagenHero = $esEnano ? "assets/img/planetas/enanos/{$id}.png" : "assets/img/planetas/{$id}.png";
-                        ?>
-                        <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
-                            <img src="<?php echo $rutaImagenHero; ?>" class="planet-bg-img" alt="Fondo decorativo de <?php echo $datos['nombre']; ?>">
-                        </div>
-                        <?php $active = false; ?>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </section>
-
         <article class="articulo-planetas">
             <?php foreach ($planetas as $id => $datos):
                 $tipoLower = strtolower($datos['tipo']);
